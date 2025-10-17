@@ -21,9 +21,9 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -44,9 +44,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Post $post): View
     {
-        //
+        return view('posts.show', [
+            'post' => $post,
+        ]);
     }
 
     /**
